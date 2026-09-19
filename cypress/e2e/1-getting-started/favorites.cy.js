@@ -27,7 +27,7 @@ describe('Favorite books functionality', () => {
  it('Should display empty favorites message', () => {
   cy.visit('/favorites');
   
-  // Удаляем все книги
+
   cy.get('body').then($body => {
     const count = $body.find('.card-footer > .btn').length;
     
@@ -37,9 +37,9 @@ describe('Favorite books functionality', () => {
     }
   });
   
-  // Проверяем, что список пуст
+
   cy.reload();
   cy.get('.card-footer > .btn').should('not.exist');
    });
-   
+
  });
